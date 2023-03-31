@@ -5,7 +5,7 @@ class Dinosaur:
         self.dinosaur_health = 100
     
     def dinosaur_attack(self, robot): # need logic, void
-        self.attack = robot
+        self.attack -= 30
 
 
 
