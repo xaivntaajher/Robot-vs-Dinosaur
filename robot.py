@@ -6,5 +6,8 @@ class Robot:
         self.robot_health = 100
         self.robot_active_weapons = Weapon('Big Gun', 20)
 
-    def robot_attack(self, dinosaur):
-        self.attack = dinosaur
+    def robot_attack(self, dinosaur): # need logic, void
+        
+        self.robot_active_weapons = 20
+
+
