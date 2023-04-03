@@ -14,15 +14,16 @@ class Battlefield:
     def display_welcome(self):
         print('Welcome to the battle! Who will when this battle?')
 
-    def battle_phase(self):
-        self.robot.robot_attack('Dino') 
-        self.dinosaur.dinosaur_attack('Lazer', 30)
+    def battle_phase(self):       
         while self.robot.robot_health > 0 and self.dinosaur.dinosaur_health > 0:
-            if self.robot.robot_health >= self.dinosaur.dinosaur_attack_power:
-                print(f'{self.dinosaur.dinosaur_name} has {self.dinosaur.dinosaur_health} remaining!')  
-            elif self.dinosaur.dinosaur_health >= self.robot.robot_active_weapons.weapon_attack_power:
-                print(f'{self.robot.robot_name} has {self.robot.robot_health} remaining!')
-            
+            self.dinosaur.dinosaur_health >= self.robot.robot_active_weapons.weapon_attack_power
+            self.robot.robot_attack(self.dinosaur) # robot attack
+            # self.dinosaur.dinosaur_health -= self.robot.robot_active_weapons.weapon_attack_power
+            print(f'{self.dinosaur.dinosaur_name} has {self.dinosaur.dinosaur_health} hp remaining!')  
+            self.robot.robot_health >= self.dinosaur.dinosaur_attack_power
+            self.dinosaur.dinosaur_attack(self.robot) # dinosaur attack
+            # self.robot.robot_health -= self.dinosaur.dinosaur_attack_power
+            print(f'{self.robot.robot_name} has {self.robot.robot_health} hp remaining!')        
 
     def diplay_winner(self):
         if self.robot.robot_health <= 0:
