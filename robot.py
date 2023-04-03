@@ -8,8 +8,6 @@ class Robot:
 
     def robot_attack(self, dinosaur): # need logic, void
         self.robot_active_weapons = Weapon('Big-O-Gun', 30)
-        if self.robot_active_weapons.weapon_attack_power <= dinosaur:
-            self.robot_active_weapons.weapon_attack_power -= dinosaur #attacks dinosaur
-            print(f'{self.robot_name} attacked {dinosaur} with {self.robot_active_weapons.weapon_name} for {self.robot_active_weapons.weapon_attack_power} damage!')
+        dinosaur -= self.robot_active_weapons.weapon_attack_power #attacks dinosaur
+        print(f'{self.robot_name} attacked {dinosaur} with {self.robot_active_weapons.weapon_name} for {self.robot_active_weapons.weapon_attack_power} damage!')
       
-  
