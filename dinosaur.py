@@ -5,9 +5,11 @@ class Dinosaur:
         self.dinosaur_health = 100
     
     def dinosaur_attack(self, robot): # need logic, void
-        self.attack -= 30
-
-
-
+        self.dinosaur_attack_power = 30
+        if self.dinosaur_attack_power <= robot:
+            self.dinosaur_attack_power -= robot #attacks robot
+            print(f'{self.dinosaur_name} attacked {robot} for {self.dinosaur_attack_power} damage!')
+        
+        
 
 
